@@ -1,5 +1,9 @@
 package game;
 
+
+
+import java.util.StringJoiner;
+
 public class Enemy {
     String name;
     int attack;
@@ -7,21 +11,20 @@ public class Enemy {
     int defense;
     String element;
 
-    public Enemy(String name, int attack, int health, int defense) {
+    public Enemy(String name, int attack, int health, int defense, String element) {
         this.name = name;
         this.attack = attack;
         this.health = health;
         this.defense = defense;
+        this.element = element;
     }
 
-    // Getter cho defense
-    public int getDefense() {
-        return this.defense;
+    public String getElement() {
+        return element;
     }
 
-    // Kiểm tra xem kẻ địch có thể hành động hay không
-    public boolean canAct() {
-        return this.health > 0;
+    public int getHealth() {
+        return this.health;
     }
 
     public int getAttack() {
@@ -29,15 +32,19 @@ public class Enemy {
     }
 
     public void takeDamage(int damage) {
-        this.health -= damage;
+        int damageTaken = (int) Math.ceil( (double) damage / ((this.defense + 100) / 100.0));
+        this.health -= damageTaken;
+        if (this.health <= 0) {
+            this.health = 0;
+        }
     }
 
     public boolean isAlive() {
         return this.health > 0;
     }
 
-	public String getName() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    public String getName() {
+        return name;
+    }
 }
+

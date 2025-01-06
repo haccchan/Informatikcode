@@ -2,12 +2,12 @@ package game;
 
 public class Battle {
     Player player;
-    Player[] allies;
+    Player[] teams;
     Enemy[] enemies;
 
-    public Battle(Player player, Player[] allies, Enemy[] enemies) {
+    public Battle(Player player, Player[] teams, Enemy[] enemies) {
         this.player = player;
-        this.allies = allies;
+        this.teams = teams;
         this.enemies = enemies;
     }
 
@@ -17,24 +17,40 @@ public class Battle {
 
         while (!battleOver) {
             System.out.println("\nTurn " + (turnCount + 1));
-            player.takeTurn(enemies);
 
-            // Kẻ địch tấn công
-            for (Enemy enemy : enemies) {
-                if (enemy.isAlive()) {
-                    int damage = enemy.getAttack();
-                    player.takeDamage(damage);
-                    System.out.println(enemy.getName() + " attacks for " + damage + " damage.");
+            //Enemy info
+            System.out.println("Enemies Info:");
+            for (int i = 0; i < enemies.length; i++) {
+                if (!enemies[i].isAlive()) {
+                    System.out.println(i + 1 + ". " + enemies[i].getName() + " (" + enemies[i].getElement() + " - " + enemies[i].getHealth() + ")" + " - dead");
+                } else {
+                    System.out.println(i + 1 + ". " + enemies[i].getName() + " (" + enemies[i].getElement() + " - " + enemies[i].getHealth() + ")");
                 }
             }
 
-            // Kiểm tra kết quả trận đấu
-            battleOver = checkBattleStatus();
+            for (Player player : teams) {
+                player.takeTurn(enemies, teams);
+            }
+
+            for (Enemy enemy : enemies) {
+                if (enemy.isAlive()) {
+                    int damage = enemy.getAttack();
+                    Player attackedPlayer = null;
+                    while (attackedPlayer == null || !attackedPlayer.isAlive()) {
+                        int attackedPlayerIndex = (int) (Math.random() * teams.length);
+                        attackedPlayer = teams[attackedPlayerIndex];
+                    }
+                    System.out.println(enemy.getName() + " attacks " + attackedPlayer.name + " for " + damage + " damage.");
+                    attackedPlayer.takeDamage(damage);
+                }
+            }
+
+            battleOver = isGameOver();
             turnCount++;
 
             if (turnCount % 5 == 0 && player.getElement().equals("Water")) {
                 System.out.println("Water Element - Healing 20% health.");
-                player.heal(20);
+                //player.heal(20);
             }
 
             if (battleOver) {
@@ -48,14 +64,29 @@ public class Battle {
         }
     }
 
-    private boolean checkBattleStatus() {
-        boolean enemiesAlive = false;
-        for (Enemy enemy : enemies) {
-            if (enemy.isAlive()) {
-                enemiesAlive = true;
+    public boolean isGameOver() {
+        boolean allAlliesDead = true;
+        for (int i = 0; i < teams.length; i++) {
+            if (teams[i].isAlive()) {
+                allAlliesDead = false;
                 break;
             }
         }
-        return !player.isAlive() || !enemiesAlive;
+        if (allAlliesDead) {
+            return true;
+        }
+        boolean allEnemiesDead = true;
+        for (int i = 0; i < enemies.length; i++) {
+            if (enemies[i].isAlive()) {
+                allEnemiesDead = false;
+                break;
+            }
+        }
+        if (allEnemiesDead) {
+            return true;
+        }
+        return false;
     }
+
+
 }
