@@ -1,9 +1,5 @@
 package game;
 
-
-
-import java.util.StringJoiner;
-
 public class Enemy {
     String name;
     int attack;
