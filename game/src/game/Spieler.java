@@ -93,7 +93,8 @@ public class Spieler {
 	public void Heilen(Spieler[] mitglieder) { // Alle Mitglieder werden ihre Gesundheitswerte um 20% erhöht.
 		for(int i=0;i<mitglieder.length;i++) {
 			if(mitglieder[i]!=null && mitglieder[i].Leben()==true) {
-				mitglieder[i].ges *= 1.2;
+				int healAmount = (int)(mitglieder[i].maxges * 0.2); // Hồi phục 20% sức khỏe tối đa
+				mitglieder[i].ges += healAmount;
 				if(mitglieder[i].ges >= mitglieder[i].maxges) {
 					mitglieder[i].ges= mitglieder[i].maxges;
 				}
@@ -124,7 +125,7 @@ public class Spieler {
 		if(vermal>0) { // die Fähigkeit des Erdeelements
 			aktver += 200;
 		}
-		int fangs = (int)(fang/((aktver +100)/100));
+		int fangs = (int)(fang * 100 / (aktver + 100));
 		this.ges -= fangs;
 		if(this.ges<=0) {
 			this.ges=0;
