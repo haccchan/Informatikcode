@@ -26,15 +26,15 @@ public class Spieler {
 	public void setElement(String element) {
 		this.element = element;
 	}
-	public void SpielerMal(Feind[] feinde,Spieler[] mitgliedern) { // die Aktionen, die der Spieler macht in seinem Mal
+	public void SpielerMal(Feind[] feinde,Spieler[] mitglieder) { // die Aktionen, die der Spieler macht in seinem Mal
 		System.out.println(sname + "sind dran! Wählen Sie Ihre Aktion:");
 		System.out.println("1. Angreifen"); 
 											 
 		if(element.equals("Wasser")) {
 			System.out.println("2. Heilen"); 
 		} else if(element.equals("Erde")) {
-			System.out.println("2. einen Schild für alle Mitgliedern schaffen (noch" + vermal + " Runde(n), nicht stapelbar)"); 
-			// Alle Mitgliedern werden ihre Verteidigungswerte in 3 Runden um 20% erhöht.
+			System.out.println("2. einen Schild für alle Mitglieder schaffen (noch" + vermal + " Runde(n), nicht stapelbar)"); 
+			// Alle Mitglieder werden ihre Verteidigungswerte in 3 Runden um 20% erhöht.
 			// Wenn es noch 1 oder 2 Runde(n), in der/denen der Schild aktiv ist, gibt, 
 			// kann der Spieler diese Fähigkeit wieder aktivieren.
 			// Aber es stellt einen neunen Schild (=20% Veiteidigungswert), der in weiteren 3 (statt 1 oder 2) Runden aktiv ist, 
@@ -51,9 +51,9 @@ public class Spieler {
 			}
 		} else if(Wahl==2) {
 			if(element.equals("Wasser")) { // die Fähigkeit des Wasserelements
-				Heilen(mitgliedern); 
+				Heilen(mitglieder); 
 			} else if(element.equals("Erde")) { // die Fähigkeit des Erdeelements
-				Schilden(mitgliedern);
+				Schilden(mitglieder);
 			}	
 		} else {
 			System.out.println("Ungültige Aktion. Sie haben Ihren Versuch verloren."); 
@@ -67,8 +67,7 @@ public class Spieler {
 			return true;
 		} 
 		return false;
-		
-	} 
+	}
 	
 	public void FahLuft(Feind[] feinde) { // Für der Besitzer des Luftelements werden alle Feinde angegriffen,
 		for(int i=0; i<feinde.length; i++) { 
@@ -81,7 +80,7 @@ public class Spieler {
 	public void SingleAngreifen(Feind[] feinde) { // während greift der Spieler einzeln für die andere an.
 		System.out.println("Wählen Sie den Gegner aus, den Sie angreifen möchten: ");
 		for(int i=0; i<feinde.length; i++) {
-			System.out.println(i+1 + ". " + feinde[i].name);
+			System.out.println(i+1 + ". " + feinde[i].fname);
 		}
 		int target = sc.nextInt()-1;
 		if(feinde[target].Leben()==true) {
@@ -91,18 +90,18 @@ public class Spieler {
 		}
 		
 	}
-	public void Heilen(Spieler[] mitgliedern) { // Alle Mitgliedern werden ihre Gesundheitswerte um 20% erhöht.
-		for(int i=0;i<mitgliedern.length;i++) {
-			if(mitgliedern[i]!=null && mitgliedern[i].Leben()==true) {
-				mitgliedern[i].ges *= 1.2;
-				if(mitgliedern[i].ges >= mitgliedern[i].maxges) {
-					mitgliedern[i].ges= mitgliedern[i].maxges;
+	public void Heilen(Spieler[] mitglieder) { // Alle Mitglieder werden ihre Gesundheitswerte um 20% erhöht.
+		for(int i=0;i<mitglieder.length;i++) {
+			if(mitglieder[i]!=null && mitglieder[i].Leben()==true) {
+				mitglieder[i].ges *= 1.2;
+				if(mitglieder[i].ges >= mitglieder[i].maxges) {
+					mitglieder[i].ges= mitglieder[i].maxges;
 				}
-				System.out.println(mitgliedern[i]+" geheilt wird.");
+				System.out.println(mitglieder[i]+" geheilt wird.");
 			}
 		}
 	}
-	public void Schilden(Spieler[] mitgliedern) { // Die Schilddauer setzen
+	public void Schilden(Spieler[] mitglieder) { // Die Schilddauer setzen
 		vermal = 3;
 	}
 	public void Angreifen(Feind feind) { // Der Angriff des Spielers
