@@ -15,7 +15,7 @@ public class Elementarreaktion {
 	public Elementarreaktion() {
 		team = new String[0];
 	}
-	 public void Hinzufugen(String element) {
+	public void Hinzufugen(String element) {
 	        String[] neuteam = new String[team.length + 1];
 	        for (int i = 0; i < team.length; i++) {
 	            neuteam[i] = team[i];
@@ -23,7 +23,7 @@ public class Elementarreaktion {
 	        neuteam[team.length] = element;
 	        team = neuteam;
 	 }
-	 public void Entfernen(String element) {
+	public void Entfernen(String element) {
 	        if (team.length > 1) {
 	            String[] neuteam = new String[team.length - 1];
 	            int index = 0;
