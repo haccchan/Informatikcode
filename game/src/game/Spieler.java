@@ -93,7 +93,7 @@ public class Spieler {
 	public void Heilen(Spieler[] mitglieder) { // Alle Mitglieder werden ihre Gesundheitswerte um 20% erhöht.
 		for(int i=0;i<mitglieder.length;i++) {
 			if(mitglieder[i]!=null && mitglieder[i].Leben()==true) {
-				int healAmount = (int)(mitglieder[i].maxges * 0.2); // Hồi phục 20% sức khỏe tối đa
+				int healAmount = (int)(mitglieder[i].maxges * 0.2); 
 				mitglieder[i].ges += healAmount;
 				if(mitglieder[i].ges >= mitglieder[i].maxges) {
 					mitglieder[i].ges= mitglieder[i].maxges;
