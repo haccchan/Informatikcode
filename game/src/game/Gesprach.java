@@ -6,6 +6,25 @@ public class Gesprach {
 		Scanner scanner = new Scanner(System.in);
 		String sname = scanner.nextLine();
 		 /*
+		  * 
+		  * "Kapitel 0: Die Geschichte beginnt", 
+"Fee: " + playerName + "..?", 
+"Wach auf! " + playerName + "!", 
+playerName + ": Wo bin ich?", 
+"Fee: Du wachst endlich auf! Wegen des Hexengifts warst du bisher bewusstlos!", 
+playerName + ": Wer ist dran? Eine Fee? Träume ich?", 
+"Fee: ...Es scheint, als hättest du auch dein Gedächtnis verloren.", 
+"Soweit ich weiß, kannst du es wiederherstellen, nachdem du 4 Elementsteine der Welt erhalten hast.", 
+playerName + ": warum muss ich an Sie glauben?", 
+"Fee: wenn nicht, was wirst du tun?", 
+playerName + ": ... ich weiß nicht", 
+"Fee: dann versuch doch einmal, mir zu glauben! Ich bin deine Fee, nenn mich Lilia. Los gehts!", 
+"Oh warte, erinnerst du dich an deine Elementwahl?", 
+playerName + ": Was ist das?", 
+"Lilia: Es gibt 4 Hauptelemente, die die Kraft des Magiers steuern: Wasser, Feuer, Luft und Erde.", 
+"Jedes Element hat seine eigene Kraft und sie schwingen miteinander.", 
+"Bitte wähl es sorgfältig aus!"
+
 		String[] dia3 = {
 				"Lilia: Derzeit liegen deine Angriffs-, Gesundheits- und \nVerteidigungswerte bei 500, 500 und 500",
 				"Lilia: Lilia wird dir speziell dabei helfen, deine Statistiken \nzweimal zu erhöhen, jedes Mal um 100. Die Entscheidung liegt bei dir!"

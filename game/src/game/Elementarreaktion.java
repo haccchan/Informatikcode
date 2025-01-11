@@ -11,11 +11,13 @@ public class Elementarreaktion {
 	boolean verdampfen = false;
 	boolean beben = false;
 	boolean brennen = false;
+	boolean tropfen = false;
+	boolean uberladen = false;
 	
 	public Elementarreaktion() {
 		team = new String[0];
 	}
-	public void Hinzufugen(String element) {
+	public void Elementhinzufugen(String element) {
 	        String[] neuteam = new String[team.length + 1];
 	        for (int i = 0; i < team.length; i++) {
 	            neuteam[i] = team[i];
@@ -23,7 +25,7 @@ public class Elementarreaktion {
 	        neuteam[team.length] = element;
 	        team = neuteam;
 	 }
-	public void Entfernen() {
+	public void Elemententfernen() {
 	    if (team.length == 3) { 
 	        String[] neuteam = new String[1]; 
 	        neuteam[0] = team[0];
@@ -31,7 +33,9 @@ public class Elementarreaktion {
 	    }
 	}
 		 
-	 public void ZeigeTeam() {
+	 /*
+	  * public void ZeigeTeam() {
+	  
 	        System.out.print("Zeigen: ");
 	        for (int i = 0; i < team.length; i++) {
 	            System.out.print(team[i]);
@@ -41,7 +45,8 @@ public class Elementarreaktion {
 	        }
 	        System.out.println();
 	    }
-	public void Prufen() {
+	    */
+	public void Elementprufen() {
 		for (int i = 0; i < team.length; i++) {
             String element = team[i];
             if (element.equals("Wasser")) {
@@ -54,10 +59,12 @@ public class Elementarreaktion {
                 luft = true;
             }
         }
-		boolean sprießen = wasser && erde;
-		boolean verdampfen = wasser && feuer;
+		boolean sprießen = wasser && luft;
 		boolean beben = luft && erde;
 		boolean brennen = luft && feuer;
+		boolean verdampfen = wasser && feuer;
+		boolean tropfen = wasser && erde;
+		boolean uberladen = feuer && erde;
 	}
 
 }

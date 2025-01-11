@@ -1,22 +1,14 @@
 package game;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         Elementarreaktion team = new Elementarreaktion();
+        Scanner scanner = new Scanner(System.in);
+        
+        
  
-        team.Hinzufugen("Feuer");
-        team.Hinzufugen("Feuer");
-        team.ZeigeTeam();
-        team.Prufen();
-
-        team.Hinzufugen("Wasser");
-        team.ZeigeTeam();
-        team.Prufen();
-
-      
-        team.Entfernen();
-        team.Hinzufugen("Wasser");
-        team.ZeigeTeam();
-        team.Prufen();
+        
     }
 }

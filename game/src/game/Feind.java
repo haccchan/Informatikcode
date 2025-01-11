@@ -24,6 +24,17 @@ public class Feind {
     public void setElement(String element) {
         this.element = element;
     }
+    public String getElement() {
+        return element;
+    }
+
+    public int getGesundheit() {
+        return this.ges;
+    }
+
+    public int getAngriff() {
+        return this.ang;
+    }
 
     public void FeindMal(Spieler[] mitglieder, Feind[] feinde) {
         int Wahl = (int) (Math.random() * 2);
@@ -114,5 +125,9 @@ public class Feind {
         if (this.ges <= 0) {
             this.ges = 0;
         }
+    }
+    
+    public String getName() {
+        return fname;
     }
 }

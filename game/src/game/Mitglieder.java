@@ -4,11 +4,10 @@ public class Mitglieder {
 	int sanzahl;
 	Spieler[] mitglieder;
 	Elementarreaktion er;
-	
-	public Mitglieder(int sanzahl){
-		this.sanzahl=sanzahl;
-		mitglieder = new Spieler[sanzahl];
-		er = new Elementarreaktion();
+	public Mitglieder() {
+		mitglieder = new Spieler[0];
+        er = new Elementarreaktion();
+    
 	}
 	public void Feindhinzufugen(Spieler[] mitglieder) {
 		this.mitglieder = mitglieder;
@@ -16,6 +15,10 @@ public class Mitglieder {
 			er.Elementhinzufugen(mitglieder[i].element);
 		}
 		ERAktivieren();
+	}
+	
+	public Spieler getMC(){
+		return mitglieder[0];
 	}
 	
 	public void ERAktivieren() {

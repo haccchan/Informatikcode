@@ -26,6 +26,30 @@ public class Spieler {
 	public void setElement(String element) {
 		this.element = element;
 	}
+	public String getElement() {
+        return element;
+    }
+	 public String getName() {
+	        return this.sname;
+	    }
+
+
+	    public int getGesundheit() {
+	        return this.ges;
+	    }
+
+	    public int getAngriff() {
+	        return this.ang;
+	    }
+
+	    public int getVerteidigung() {
+	        return this.ver;
+	    }
+
+	    public int getMaxGesundheit() {
+	        return this.ges;
+	    }
+
 	public void SpielerMal(Feind[] feinde,Spieler[] mitglieder) { // die Aktionen, die der Spieler macht in seinem Mal
 		System.out.println(sname + "sind dran! Wählen Sie Ihre Aktion:");
 		System.out.println("1. Angreifen"); 
@@ -108,8 +132,9 @@ public class Spieler {
 	public void Angreifen(Feind feind) { // Der Angriff des Spielers
 		int sangf = this.ang; // der Schaden des Feinds setzen
 		if(element.equals("Feuer")) { // die Fähigkeit des Feuerelements
-			double kritratio = Math.random();
-			if(kritratio<=0.4) {
+			double krit = Math.random();
+			double kritratio = 0.4;
+			if(krit<=kritratio) {
 				sangf *= 2;
 			}
 			System.out.println(sname + "erfolgreich angreift einen kritischen Schaden!");
@@ -117,7 +142,7 @@ public class Spieler {
 		if(element.equals("Luft")) { // die Fähigkeit des Luftelements
 			sangf = sangf*3/4;
 		}
-		// ham nhan dam cua Enemy
+		feind.Angegriffen(sangf);
 		System.out.println(sname + " schafft einen Schaden mit dem Wert " + sangf );
 	}
 	public void Angegriffen(int fang) {
