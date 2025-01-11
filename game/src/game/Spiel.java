@@ -107,6 +107,6 @@ public class Spiel {
         fteam = new Feinde(feinde.length);
         fteam.Feindhinzufugen(feinde);
         Kampf kampf1 = new Kampf(steam, fteam);
-        kampf1.start();
+        kampf1.Anfang();
 	}
 }

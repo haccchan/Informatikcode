@@ -10,7 +10,7 @@ public class Kampf {
 		this.fteam = fteam;
 	}
 	
-	public void anfang() {
+	public void Anfang() {
 		int runden = 0;
 		boolean KampfEnde = false;
 		
