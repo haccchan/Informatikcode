@@ -23,20 +23,23 @@ public class Elementarreaktion {
 	        neuteam[team.length] = element;
 	        team = neuteam;
 	 }
-	public void Entfernen(String element) {
-	        if (team.length > 1) {
-	            String[] neuteam = new String[team.length - 1];
-	            int index = 0;
-	            for (int i = 0; i < team.length; i++) {
-	                if (!team[i].equals(element)) {
-	                    if (index < neuteam.length) {
-	                    	neuteam[index] = team[i];
-	                        index++;
-	                    }
-	                }
+	public void Entfernen() {
+	    if (team.length == 3) { 
+	        String[] neuteam = new String[1]; 
+	        neuteam[0] = team[0];
+	        team = neuteam; 
+	    }
+	}
+		 
+	 public void ZeigeTeam() {
+	        System.out.print("Zeigen: ");
+	        for (int i = 0; i < team.length; i++) {
+	            System.out.print(team[i]);
+	            if (i < team.length - 1) {
+	                System.out.print(", ");
 	            }
-	            team = neuteam;
 	        }
+	        System.out.println();
 	    }
 	public void Prufen() {
 		for (int i = 0; i < team.length; i++) {
