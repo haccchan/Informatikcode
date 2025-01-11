@@ -9,13 +9,16 @@ public class Mitglieder {
         er = new Elementarreaktion();
     
 	}
-	public void Feindhinzufugen(Spieler[] mitglieder) {
-		this.mitglieder = mitglieder;
-		for(int i=0; i<mitglieder.length; i++) {
-			er.Elementhinzufugen(mitglieder[i].element);
-		}
-		ERAktivieren();
-	}
+	public void Mitgliederhinzufugen(Spieler spieler) {
+		Spieler[] neuteam = new Spieler[mitglieder.length + 1];
+        for (int i = 0; i < mitglieder.length; i++) {
+            neuteam[i] = mitglieder[i];
+        }
+        neuteam[mitglieder.length] = spieler;
+        mitglieder = neuteam;
+        er.Elementhinzufugen(spieler.element);
+        ERAktivieren();
+    }
 	
 	public Spieler getMC(){
 		return mitglieder[0];

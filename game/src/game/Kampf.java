@@ -5,9 +5,9 @@ public class Kampf {
 	Mitglieder steam;
 	Feinde fteam;
 	
-	public void Kampf(Mitglieder mitglieder, Feinde feinde) {
-		this.fteam = fteam;
+	public Kampf(Mitglieder mitglieder, Feinde feinde) {
 		this.steam = steam;
+		this.fteam = fteam;
 	}
 	
 	public void anfang() {

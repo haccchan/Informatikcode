@@ -1,39 +1,57 @@
 package game;
-import java.util.Scanner;
+
 public class Gesprach {
+    public static String[] kapitel0() {
+        return new String[] {
+            "Kapitel 0: Die Geschichte beginnt",
+            "Fee: [SpielerName]..?",
+            "Wach auf! [SpielerName]!",
+            "[SpielerName]: Wo bin ich?",
+            "Fee: Du wachst endlich auf! Wegen des Hexengifts warst du bisher bewusstlos!",
+            "[SpielerName]: Wer ist dran? Eine Fee? Träume ich?",
+            "Fee: ...Es scheint, als hättest du auch dein Gedächtnis verloren.",
+            "Soweit ich weiß, kannst du es wiederherstellen, nachdem du 4 Elementsteine der Welt erhalten hast.",
+            "[SpielerName]: warum muss ich an Sie glauben?",
+            "Fee: wenn nicht, was wirst du tun?",
+            "[SpielerName]: ... ich weiß nicht.",
+            "Fee: dann versuch doch einmal, mir zu glauben! Ich bin deine Fee, nenn mich Lilia. Los gehts!",
+            "Oh warte, erinnerst du dich an deine Elementwahl?",
+            "[SpielerName]: Was ist das?",
+            "Lilia: Es gibt 4 Hauptelemente, die die Kraft des Magiers steuern: Wasser, Feuer, Luft und Erde.",
+            "Lilia: Wenn du Wasser als dein Element wählst, wirst du zum Heiler und \nhast die Fähigkeit, alle deine Verbündeten um 20% Gesundheit zu heilen.",
+            "Lilia: Wenn du Erde als dein Element wählst, wirst du zum Abschirmer und \nhast die Fähigkeit, um die Verteidigung Ihrer Verbündeten in 3 Runden zu erhöhen",
+            "Lilia: Wenn du Feuer als dein Element wählst, wirst du zum Kanonier und \nhast die Fähigkeit, um 40% Chance auf einen kritischen Treffer, der doppelten Schaden verursacht, zu haben",
+            "Lilia: Wenn du Luft als dein Element wählst, wirst du zum Regler und \nhast die Fähigkeit, um alle Feinde gleichzeitig zu angreifen, aber den Schaden um 20% verringern",
+            "Jedes Element hat seine eigene Kraft und sie schwingen miteinander auch.",
+            "Es heißt Elementarreaktion. Der Elementarreaktion ist aktiv, wenn Ihr Team über genügend der folgenden",
+            "1. Sprießen (Wasser + Luft): Erhöht 20% Ihre Gesundheit\n2. Beben (Erde + Luft) :Erhöht 20% Ihre Gesundheit\n3. Brennen (Feuer + Luft): Erhöht 20% Ihrer Angriff\n4. Verdampfen (Wasser + Feuer): Erhöht 10% Ihre Gesundheit & 10% Ihrer Angriff\n5. Tropfen (Wasser + Erde): Erhöht 10% Ihre Gesundheit & 10% Ihre Verteidigung\n6. Überladen (Feuer + Erde): Erhöht 10% Ihrer Angriff & 10% Ihre Verteidigung",
+            "Bitte wähl es sorgfältig aus!",
+            "1. Wasser\n2.Erde\n3.Feuer\n4.Luft"
+        };
+    }
+    public static String[] dia3() {
+        return new String[] {
+        		"Lilia: Derzeit liegen deine Angriffs-, Gesundheits- und \nVerteidigungswerte bei 500, 500 und 500",
+				"Lilia: Lilia wird dir speziell dabei helfen, deine Statistiken \neinmal um 50 zu erhöhen. Die Entscheidung liegt bei dir!"
+        };
+    }
+    public static String[] dia4() {
+        return new String[] {
+        		"Lilia: Was für kluge Entscheidungen! \nLasst uns unser Abenteuer beginnen!",
+        		"Kapitel 1: Der erste Stein",
+        		"[SpielerName]: Wohin gehen wir?",
+        		"Lilia: Ich kann hier einen Stein riechen",
+        		"[SpielerName]: Riechen? Wie?",
+        		"Lilia: Ich bin eine Fee, nicht du, \nalso wirst du es nicht verstehen!",
+        		"Dort drüben! Da sind zwei Wölfe, die Steine halten! \nGreift sie an!",
 
-	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		String sname = scanner.nextLine();
-		 /*
-		  * 
-		  * "Kapitel 0: Die Geschichte beginnt", 
-"Fee: " + playerName + "..?", 
-"Wach auf! " + playerName + "!", 
-playerName + ": Wo bin ich?", 
-"Fee: Du wachst endlich auf! Wegen des Hexengifts warst du bisher bewusstlos!", 
-playerName + ": Wer ist dran? Eine Fee? Träume ich?", 
-"Fee: ...Es scheint, als hättest du auch dein Gedächtnis verloren.", 
-"Soweit ich weiß, kannst du es wiederherstellen, nachdem du 4 Elementsteine der Welt erhalten hast.", 
-playerName + ": warum muss ich an Sie glauben?", 
-"Fee: wenn nicht, was wirst du tun?", 
-playerName + ": ... ich weiß nicht", 
-"Fee: dann versuch doch einmal, mir zu glauben! Ich bin deine Fee, nenn mich Lilia. Los gehts!", 
-"Oh warte, erinnerst du dich an deine Elementwahl?", 
-playerName + ": Was ist das?", 
-"Lilia: Es gibt 4 Hauptelemente, die die Kraft des Magiers steuern: Wasser, Feuer, Luft und Erde.", 
-"Jedes Element hat seine eigene Kraft und sie schwingen miteinander.", 
-"Bitte wähl es sorgfältig aus!"
+         	};
+    }
+}
 
-		String[] dia3 = {
-				"Lilia: Derzeit liegen deine Angriffs-, Gesundheits- und \nVerteidigungswerte bei 500, 500 und 500",
-				"Lilia: Lilia wird dir speziell dabei helfen, deine Statistiken \nzweimal zu erhöhen, jedes Mal um 100. Die Entscheidung liegt bei dir!"
-            };
 
-        for (int i = 0; i < dia3.length; i++) {
-            scanner.nextLine();  
-            System.out.println(dia3[i]);
-        }
+
+		/* 
 
         
         String[] dia4 = {
@@ -189,7 +207,8 @@ playerName + ": Was ist das?",
 			    scanner.nextLine(); 
 			    
 			}
-*/
+
 	}
 
 }
+*/
